@@ -8,6 +8,7 @@ from dotenv import dotenv_values
 
 dp = Dispatcher()
 
+
 #команда старт
 @dp.message(CommandStart())
 async def check_user_id(message: types.Message):
@@ -17,6 +18,7 @@ async def check_user_id(message: types.Message):
     await message.reply("Добро пожаловать!")
 
 #база данных
+
 
 async def add_user(user_id: int):
     async with aiosqlite.connect("database.db") as db:

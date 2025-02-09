@@ -1,5 +1,6 @@
 import aiosqlite
 import asyncio
+from data_genratore.test_data import insert_test_data
 
 #таблица для вайтлиста
 async def create_users():
@@ -71,4 +72,7 @@ async def create_answers():
          """)
         await db.commit()
 
-asyncio.run(create_answers())
+
+if __name__ == '__main__':
+    db_path = 'database.db'
+    asyncio.run(insert_test_data(db_path))
